@@ -1,6 +1,7 @@
 // src/components/OrderForm.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import { url } from '../constant';
 
 const OrderPlacedForm = () => {
   const [buyerQty, setBuyerQty] = useState('');

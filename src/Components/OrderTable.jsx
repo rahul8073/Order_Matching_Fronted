@@ -5,11 +5,11 @@ const OrderTable = ({ type }) => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/pending-orders`)
+    axios.get(`${url}/api/pending-orders`)
       .then(response => setOrders(response.data))
       .catch(error => console.error('Error fetching orders:', error));
   }, [type]);
-console.log(orders);
+// console.log(orders);
 
   return (
     <div className="overflow-x-auto">

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { url } from '../constant';
 
 const ComletedOrderTable = ({ type }) => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/completed-orders`)
+    axios.get(`${url}/api/completed-orders`)
       .then(response => setOrders(response.data))
       .catch(error => console.error('Error fetching orders:', error));
   }, [type]);

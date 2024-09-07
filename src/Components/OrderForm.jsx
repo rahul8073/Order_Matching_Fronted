@@ -1,6 +1,7 @@
 // src/components/OrderForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { url } from '../constant';
 
 const OrderForm = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ const OrderForm = () => {
   
 
     try {
-      const response = await axios.post('http://localhost:5000/api/pending-orders', formData, {
+      const response = await axios.post(`${url}/api/pending-orders`, formData, {
         headers: { 'Content-Type': 'application/json' }
       });
       console.log(response.data);

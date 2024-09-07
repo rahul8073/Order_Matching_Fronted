@@ -22,7 +22,7 @@ const OrderPlacedForm = () => {
     setSuccess(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/place-order', {
+      const response = await axios.post(`${url}/api/place-order`, {
         buyer_qty: parseFloat(buyerQty),
         buyer_price: parseFloat(buyerPrice),
       });
